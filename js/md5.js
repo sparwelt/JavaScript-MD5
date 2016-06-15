@@ -267,13 +267,8 @@
     return raw_hmac_md5(key, string)
   }
 
-  if (typeof define === 'function' && define.amd) {
-    define(function () {
-      return md5
-    })
-  } else if (typeof module === 'object' && module.exports) {
-    module.exports = md5
-  } else {
-    $.md5 = md5
-  }
+  var object = typeof exports !== 'undefined' ? exports : this;
+  object = md5;
+  module.exports = md5;
+
 }(this))
